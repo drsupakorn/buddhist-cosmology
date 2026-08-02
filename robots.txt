@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://drsupakorn.github.io/buddhist-cosmology/sitemap.xml
