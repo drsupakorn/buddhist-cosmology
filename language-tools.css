@@ -158,3 +158,66 @@
   .copy-row{flex-direction:column}
   .copy-button{width:100%}
 }
+
+
+/* Keep language controls visible while only the table-of-contents nav scrolls */
+.topbar-inner{
+  overflow:visible !important;
+  white-space:nowrap;
+}
+
+.topbar-inner .nav{
+  flex:1 1 auto;
+  min-width:0;
+  overflow-x:auto;
+  overflow-y:hidden;
+  padding:8px 2px;
+  scrollbar-width:thin;
+  -webkit-overflow-scrolling:touch;
+}
+
+.language-tools{
+  flex:0 0 auto;
+  margin-left:0;
+  padding-left:0;
+  position:relative;
+  z-index:40;
+}
+
+@media(max-width:900px){
+  .topbar-inner{
+    flex-wrap:nowrap;
+    padding:0;
+  }
+
+  .topbar-inner .nav{
+    order:initial;
+    max-width:none;
+  }
+
+  .language-tools{
+    width:auto;
+    justify-content:flex-end;
+  }
+}
+
+@media(max-width:700px){
+  .topbar-inner{
+    flex-wrap:wrap;
+    row-gap:6px;
+    padding:7px 0;
+  }
+
+  .language-tools{
+    order:1;
+    width:100%;
+    justify-content:flex-start;
+  }
+
+  .topbar-inner .nav{
+    order:2;
+    width:100%;
+    flex-basis:100%;
+    padding:4px 0 2px;
+  }
+}
