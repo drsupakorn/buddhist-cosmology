@@ -1,0 +1,160 @@
+
+/* Buddhist Cosmology language controls */
+.language-tools{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding-left:12px;
+}
+.language-switch{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  padding:4px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:rgba(255,255,255,.78);
+}
+.language-switch a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:32px;
+  padding:6px 11px;
+  border-radius:999px;
+  color:var(--muted);
+  font-size:.82rem;
+  font-weight:850;
+  text-decoration:none;
+}
+.language-switch a:hover,
+.language-switch a:focus-visible{
+  color:var(--navy);
+  outline:none;
+}
+.language-switch a[aria-current="true"]{
+  background:var(--navy);
+  color:#fff;
+}
+.language-help{
+  position:relative;
+}
+.language-help summary{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  min-height:40px;
+  padding:8px 12px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:rgba(255,255,255,.78);
+  color:var(--navy);
+  font-size:.82rem;
+  font-weight:850;
+  cursor:pointer;
+  list-style:none;
+  user-select:none;
+}
+.language-help summary::-webkit-details-marker{display:none}
+.language-help summary::after{content:"▾";font-size:.72rem}
+.language-help[open] summary::after{content:"▴"}
+.language-panel{
+  position:absolute;
+  top:calc(100% + 10px);
+  right:0;
+  width:min(390px,calc(100vw - 32px));
+  padding:20px;
+  border:1px solid rgba(255,255,255,.96);
+  border-radius:18px;
+  background:rgba(255,253,248,.99);
+  color:var(--text);
+  box-shadow:0 18px 48px rgba(39,34,24,.20);
+  white-space:normal;
+}
+.language-panel h2{
+  margin:0 0 8px;
+  font-family:inherit;
+  font-size:1.04rem;
+  font-weight:850;
+  line-height:1.35;
+}
+.language-panel p{
+  margin:0 0 12px;
+  color:var(--muted);
+  font-size:.82rem;
+  line-height:1.58;
+}
+.browser-list{
+  display:grid;
+  gap:9px;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.browser-list li{
+  padding:11px 12px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#fff;
+  font-size:.80rem;
+  line-height:1.5;
+}
+.browser-list strong{
+  display:block;
+  margin-bottom:2px;
+  color:var(--navy);
+  font-size:.85rem;
+}
+.copy-row{
+  display:flex;
+  gap:8px;
+  margin-top:12px;
+}
+.page-url{
+  min-width:0;
+  flex:1;
+  height:42px;
+  padding:9px 11px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:#fff;
+  color:var(--muted);
+  font-size:.76rem;
+}
+.copy-button{
+  min-width:92px;
+  height:42px;
+  padding:9px 12px;
+  border:0;
+  border-radius:10px;
+  background:var(--navy);
+  color:#fff;
+  font-size:.80rem;
+  font-weight:850;
+  cursor:pointer;
+}
+.copy-status{
+  min-height:1.3em;
+  margin:7px 0 0!important;
+  color:var(--navy)!important;
+  font-size:.76rem!important;
+  font-weight:750;
+}
+.translation-note{
+  margin-top:12px!important;
+  padding-top:12px;
+  border-top:1px solid var(--line);
+  font-size:.76rem!important;
+}
+@media(max-width:900px){
+  .topbar-inner{overflow:visible;flex-wrap:wrap;padding:8px 0}
+  .nav{overflow-x:auto;max-width:100%;order:3}
+  .language-tools{margin-left:0}
+}
+@media(max-width:620px){
+  .language-tools{width:100%;justify-content:flex-start;padding-left:0}
+  .language-panel{right:auto;left:0}
+  .copy-row{flex-direction:column}
+  .copy-button{width:100%}
+}
