@@ -159,65 +159,86 @@
   .copy-button{width:100%}
 }
 
-
-/* Keep language controls visible while only the table-of-contents nav scrolls */
+/* Definitive stacked topbar layout:
+   Row 1: brand
+   Row 2: language controls
+   Row 3: scrollable article navigation */
 .topbar-inner{
+  display:grid !important;
+  grid-template-columns:1fr;
+  gap:6px;
+  min-height:auto !important;
+  padding:8px 0 7px;
   overflow:visible !important;
-  white-space:nowrap;
+  white-space:normal !important;
+}
+
+.topbar-inner .brand{
+  display:inline-block !important;
+  width:max-content;
+  max-width:100%;
+  line-height:1.25;
+}
+
+.language-tools{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:8px;
+  width:100%;
+  margin:0;
+  padding:0;
+  position:relative;
+  z-index:40;
+  flex-wrap:wrap;
 }
 
 .topbar-inner .nav{
-  flex:1 1 auto;
+  display:flex;
+  gap:12px;
+  width:100%;
   min-width:0;
   overflow-x:auto;
   overflow-y:hidden;
-  padding:8px 2px;
+  padding:5px 1px 2px;
+  white-space:nowrap;
   scrollbar-width:thin;
   -webkit-overflow-scrolling:touch;
 }
 
-.language-tools{
+.topbar-inner .nav a{
   flex:0 0 auto;
-  margin-left:0;
-  padding-left:0;
-  position:relative;
-  z-index:40;
 }
 
-@media(max-width:900px){
-  .topbar-inner{
-    flex-wrap:nowrap;
-    padding:0;
-  }
+.language-switch,
+.language-help{
+  flex:0 0 auto;
+}
 
-  .topbar-inner .nav{
-    order:initial;
-    max-width:none;
+.language-panel{
+  right:auto;
+  left:0;
+}
+
+@media(max-width:620px){
+  .topbar-inner{
+    padding:7px 0 6px;
+    gap:5px;
   }
 
   .language-tools{
-    width:auto;
-    justify-content:flex-end;
-  }
-}
-
-@media(max-width:700px){
-  .topbar-inner{
-    flex-wrap:wrap;
-    row-gap:6px;
-    padding:7px 0;
+    gap:6px;
   }
 
-  .language-tools{
-    order:1;
-    width:100%;
-    justify-content:flex-start;
+  .language-switch a{
+    padding:6px 10px;
+  }
+
+  .language-help summary{
+    padding:8px 10px;
   }
 
   .topbar-inner .nav{
-    order:2;
-    width:100%;
-    flex-basis:100%;
-    padding:4px 0 2px;
+    padding-top:3px;
   }
 }
